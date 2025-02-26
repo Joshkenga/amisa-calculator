@@ -1,15 +1,10 @@
-
-
 package QuestionTwo;
 
-public class Calculator {
-
+class Calculator {
     public void calculate() {
-        System.out.println("Performing a general calculation ..");
-
+        System.out.println("Performing a general calculation...");
     }
 
-    // Overloaded method to display details
     public void displayDetails() {
         System.out.println("This is a basic calculator.");
     }
@@ -17,29 +12,50 @@ public class Calculator {
     public void displayDetails(String calculatorType) {
         System.out.println("This is a " + calculatorType + " calculator.");
     }
+}
 
-
-    public class ScientificCalculator extends Calculator {
-
-
-        public void calculate() {
-            System.out.println("Performing scientific computations like trigonometry.");
-        }
+class ScientificCalculator extends Calculator {
+    @Override
+    public void calculate() {
+        System.out.println("Performing scientific computations like trigonometry.");
     }
+}
 
-
-    public class FinancialCalculator extends Calculator {
-
-
-        public void calculate(){
-            System.out.println("Performing financial operations like interest calculation..");
-        }
+class FinancialCalculator extends Calculator {
+    @Override
+    public void calculate() {
+        System.out.println("Performing financial operations like interest calculation.");
     }
+}
 
-    public class  RuntimePolymorphism {
-        public static void demonstratePolymorphism(Calculator calculator) {
-            calculator.calculate();
-        }
+class RuntimePolymorphism {
+    public static void demonstratePolymorphism(Calculator calculator) {
+        calculator.calculate();
     }
+}
 
+// Main class
+
+class CalculatorProgram {
+    public static void main(String[] args) {
+        // Creating objects of subclasses
+        FinancialCalculator fin = new FinancialCalculator();
+        ScientificCalculator sci = new ScientificCalculator();
+
+        // Demonstrating method overriding
+        fin.calculate();
+        sci.calculate();
+        System.out.println("____________________________________");
+
+        // Demonstrating method overloading
+        sci.displayDetails();
+        sci.displayDetails("Scientific");
+        fin.displayDetails();
+        fin.displayDetails("Financial");
+        System.out.println("____________________________________");
+
+        // Demonstrating runtime polymorphism
+        RuntimePolymorphism.demonstratePolymorphism(sci);
+        RuntimePolymorphism.demonstratePolymorphism(fin);
+    }
 }
