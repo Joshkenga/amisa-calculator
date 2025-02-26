@@ -4,7 +4,7 @@ package QuestionTwo;
 
 public class Calculator {
 
-    public void culculate() {
+    public void calculate() {
         System.out.println("Performing a general calculation ..");
 
     }
@@ -33,6 +33,12 @@ public class Calculator {
 
         public void calculate(){
             System.out.println("Performing financial operations like interest calculation..");
+        }
+    }
+
+    public class  RuntimePolymorphism {
+        public static void demonstratePolymorphism(Calculator calculator) {
+            calculator.calculate();
         }
     }
 
