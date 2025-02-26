@@ -28,4 +28,12 @@ public class Calculator {
     }
 
 
+    public class FinancialCalculator extends Calculator {
+
+
+        public void calculate(){
+            System.out.println("Performing financial operations like interest calculation..");
+        }
+    }
+
 }
