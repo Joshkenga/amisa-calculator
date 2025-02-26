@@ -4,7 +4,7 @@ package QuestionTwo;
 
 public class Calculator {
 
-    public void culculate(){
+    public void culculate() {
         System.out.println("Performing a general calculation ..");
 
     }
@@ -18,5 +18,14 @@ public class Calculator {
         System.out.println("This is a " + calculatorType + " calculator.");
     }
 
-}
 
+    public class ScientificCalculator extends Calculator {
+
+
+        public void calculate() {
+            System.out.println("Performing scientific computations like trigonometry.");
+        }
+    }
+
+
+}
